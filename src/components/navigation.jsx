@@ -17,7 +17,7 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <Link
-          to="/About"
+          to="/Resume"
           className={`text-blue-500 hover:text-blue-700 ${currentPage === '/Resume' ? 'font-bold' : ''}`}
         >
           Resume
