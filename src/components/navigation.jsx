@@ -1,44 +1,30 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
-// Here we are using object destructuring assignment to pluck off our variables from the props object
-// We assign them to their own variable names
 function NavTabs() {
   const currentPage = useLocation().pathname;
 
+  const navLinks = [
+    { path: "/", label: "About" },
+    { path: "/Resume", label: "Resume" },
+    { path: "/Work", label: "Projects" },
+    { path: "/Contact", label: "Contact Me" },
+  ];
+
+  // bg-gradient-to-r from-purple-500 via-green-500 to-purple-500 animate-gradient
   return (
-    <ul className="flex justify-end space-x-4 p-4">
-      <li className="nav-item">
-        <Link
-          to="/"
-          className={`text-blue-500 hover:text-blue-700 ${currentPage === '/' ? 'font-bold' : ''}`}
-        >
-          About
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/Resume"
-          className={`text-blue-500 hover:text-blue-700 ${currentPage === '/Resume' ? 'font-bold' : ''}`}
-        >
-          Resume
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/Work"
-          className={`text-blue-500 hover:text-blue-700 ${currentPage === '/Work' ? 'font-bold' : ''}`}
-        >
-          Projects
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to="/Contact"
-          className={`text-blue-500 hover:text-blue-700 ${currentPage === '/Contact' ? 'font-bold' : ''}`}
-        >
-          Contact Me
-        </Link>
-      </li>
+    <ul className="flex justify-center space-x-4 p-4 neon-skill border-b-2 border-black">
+      {navLinks.map(({ path, label }) => (
+        <li key={path} className="nav-item">
+          <Link
+            to={path}
+            className={`text-black font-medium hover:text-white ${
+              currentPage === path ? "font-bold text-black underline" : ""
+            }`}
+          >
+            {label}
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 }

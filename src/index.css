@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+    /* Bounce-in animation */
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+
+        60% {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .animate-bounce-in {
+        animation: bounce-in 0.8s ease-out;
+    }
+
+    @keyframes gradient-bg {
+        0% {
+            background-color: #00ff99;
+            /* Green */
+        }
+
+        100% {
+            background-color: #7d00ff;
+            /* Purple */
+        }
+    }
+
+    /* Animation for the skill buttons */
+    @keyframes neon-skill {
+        0% {
+            background-color: #ff00ff;
+            /* Neon Pink */
+        }
+
+        100% {
+            background-color: #9d00ff;
+            /* Neon Purple */
+        }
+    }
+
+
+    .animate-bg {
+        animation: gradient-bg 10s ease-in-out infinite alternate;
+    }
+
+    .neon-skill {
+        animation: neon-skill 3s ease-in-out infinite alternate;
+    }
+}

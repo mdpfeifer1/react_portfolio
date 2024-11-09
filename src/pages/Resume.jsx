@@ -1,15 +1,18 @@
-import React from 'react';
+import React from "react";
+import resumePdfUrl from "../assets/Mikel Pfeifer Resume.pdf"; // Importing PDF directly
 
 const Resume = () => {
-  const resumePdfUrl = '../assets/Mikel_Pfeifer_Resume (13).pdf';
-
   return (
-    <div className="container mx-auto mt-8 text-center">
-      <h1 className="text-4xl font-bold mb-4">Resume</h1>
-      <p className="text-lg text-gray-700 mb-8">Download my resume in PDF format:</p>
-      <a href={resumePdfUrl} download="Mikel_Pfeifer_Resume.pdf" className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600">
-        Download Resume
-      </a>
+    <div className="text-center min-h-screen flex-col justify-center px-4 bg-gradient-to-r from-black via-purple-500 to-black">
+  
+      {/* Embedded PDF */}
+      <div className="">
+        <iframe
+          src={resumePdfUrl} // Using the imported PDF URL
+          title="Resume"
+          className="w-full h-[900px] shadow-white shadow-lg rounded-lg"
+        ></iframe>
+      </div>
     </div>
   );
 };
