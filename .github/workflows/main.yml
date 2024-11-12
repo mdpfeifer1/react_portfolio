@@ -8,14 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Update to the latest version
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full history for GitHub Pages
 
       - name: Set up Node
-        uses: actions/setup-node@v3  # Update to the latest version
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'  # You can use 18 or specify 20 for future-proofing
+          node-version: '20'  # Specify Node 20 as required by the deprecation notice
 
       - name: Install dependencies
         run: npm install
@@ -24,8 +27,7 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4  # Update to the latest version
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
