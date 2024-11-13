@@ -10,7 +10,7 @@ export default defineConfig({
       "@fortawesome/free-brands-svg-icons",
     ],
   },
-  base: "/react_portfolio",
+  base: "/react_portfolio/",
   plugins: [react()],
   server: {
     proxy: {
