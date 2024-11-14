@@ -20,7 +20,10 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3001/send-email", formData);
+      await axios.post(
+        "https://git.heroku.com/thawing-wave-36881.git/send-email",
+        formData
+      );
       alert("Email sent successfully!");
       setFormData({ name: "", email: "", phone: "", about: "" });
     } catch (error) {

@@ -7,9 +7,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(
+  origin: "https://mdpfeifer1.github.io"
+));
+
+const PORT = process.env.PORT || 3001;
 
 // Nodemailer setup
 const transporter = nodemailer.createTransport({
@@ -40,4 +45,11 @@ app.post("/send-email", (req, res) => {
   });
 });
 
-app.listen(3001, () => console.log("Server running on port 3001"));
+app.get("/", (req, res) => {
+  res.send("Welcome to the API. Use POST /send-email to send an email.");
+});
+
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
