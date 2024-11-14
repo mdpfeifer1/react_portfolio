@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors(
-  origin: "https://mdpfeifer1.github.io"
+  origin: "https://mdpfeifer1.github.io/react_portfolio/"
 ));
 
 const PORT = process.env.PORT || 3001;
@@ -48,6 +48,7 @@ app.post("/send-email", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Welcome to the API. Use POST /send-email to send an email.");
 });
+
 
 
 app.listen(PORT, () => {
