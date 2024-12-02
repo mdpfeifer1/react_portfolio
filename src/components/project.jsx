@@ -3,7 +3,7 @@ import PfeiferBros from "../assets/Pfeifer Bros.png";
 import ThePost from "../assets/thepostshermantx.com_ (1).png";
 import UGN from "../assets/www.theundergroundsportsnutrition.com_.png";
 import TechE from "../assets/afternoon-castle-51017-cacd77f60105.herokuapp.com_ (1).png";
-import Challenge from "../assets/challenge-1.png";
+import Challenge from "../assets/Challenge-1.png";
 import Horiseon from "../assets/horiseon1.png";
 import CampFinder from "../assets/camp_finder_screenshot (1).png";
 import ORM from "../assets/drive.google.com_file_d_1bZStRYMNkoSPmsIhXcUjnbHZ2-4iJzZC_view.png";
