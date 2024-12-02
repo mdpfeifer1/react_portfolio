@@ -1,11 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer utilities {
 
     /* Bounce-in animation */
@@ -44,12 +39,12 @@
     /* Animation for the skill buttons */
     @keyframes neon-skill {
         0% {
-            background-color: #ff00ff;
+            background-color: #0b0a0a;
             /* Neon Pink */
         }
 
         100% {
-            background-color: #9d00ff;
+            background-color: #4c0479;
             /* Neon Purple */
         }
     }

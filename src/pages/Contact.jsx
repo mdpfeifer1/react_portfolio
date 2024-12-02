@@ -33,11 +33,11 @@ export default function Contact() {
   };
 
   const inputClass =
-    "block w-full rounded-md border-gray-300 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-500 sm:text-sm";
+    "block w-full rounded-md border-gray-500 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-500 sm:text-sm";
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-black via-purple-500 to-black">
-      <div className="bg-black p-8 rounded-xl shadow-2xl shadow-white w-full max-w-md">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700">
+      <div className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-700 p-8 rounded-xl shadow-2xl shadow-white w-full max-w-md mb-64">
         <h2 className="text-2xl font-bold mb-6 text-white text-center">
           Contact Me
         </h2>
@@ -85,7 +85,7 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 rounded-lg neon-skill text-white font-bold focus:ring-2 focus:ring-green-500 shadow-white shadow-md"
+            className="w-full py-2 px-4 rounded-lg bg-gray-900 text-white font-bold focus:ring-2 focus:ring-green-500 shadow-white shadow-sm hover:bg-white hover:text-black hover:duration-300"
           >
             Submit
           </button>

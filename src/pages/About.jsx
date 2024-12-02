@@ -25,49 +25,58 @@ const About = () => {
     "CSS",
     "NodeJs",
     "Bootstrap",
-    "PHP",
     "Wix",
     "WordPress",
     "MySQL",
     "MongoDB", 
     "Python",
     "Git",
-    "Figma"
-    
-
+    "Figma",
+    "Cisco"
   ];
 
 
   return (
-    <div className="bg-gradient-to-r from-black via-purple-500 to-black min-h-screen">
-      <div className="container mx-auto py-16">
-        <div className="text-center animate-bounce-in">
+    <div className="bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700 min-h-screen font-mono">
+      <div className="container mx-auto py-8">
+        <div className="text-center text-yellow-300">
           <img
             src={selfie3}
-            alt="My Girl"
-            className="rounded-md h-64 w-44 mx-auto mb-12 shadow-lg shadow-black"
+            alt="Mikel Pfeifer"
+            className="rounded-md h-64 w-44 mx-auto mb-8 shadow-lg shadow-black"
           />
           <h1 className="text-4xl font-bold mb-4">Mikel Pfeifer</h1>
-          <p className="text-lg text-gray-700 font-bold">
+          <p className="text-2xl text-[#4c0479] font-bold">
             Full Stack Developer
           </p>
+          <p className="p-4">
+            Pronounced Michael Fi Fur, for now I’m a freelance Web Developer,
+            Software Engineer and UI/UX Designer pursuing an opportunity to
+            shine, grow and challenge myself within a company. I'm an artist at heart
+            whether the medium be writing, music, painting, drawing or here with 
+            developing applications I bring forth passion in it all.{" "}
+          </p>
         </div>
+
         {/* Skills Section */}
-        <section className="mt-12 animate-bounce-in ">
+        <section className="mt-8  ">
           <div className="flex flex-wrap justify-center">
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="neon-skill text-white px-4 py-2 m-2 rounded-md shadow-lg shadow-black hover:scale-105 hover:duration-75"
+                className="neon-skill text-white px-4 py-2 m-2 font-bold rounded-md shadow-lg shadow-black hover:scale-105 hover:duration-300 hover:cursor-default"
               >
                 {skill}
               </span>
             ))}
           </div>
         </section>
+
         {/* Social Links Section */}
         <section className="mt-12">
-          <h2 className="text-2xl font-bold mb-4 text-center">Social Links</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center text-[#4c0479]">
+            Social Links
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {socialLinks.map((link, index) => (
               <a
@@ -75,7 +84,7 @@ const About = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
+                className="flex items-center p-4 text-yellow-300 font-bold bg-black rounded-lg shadow-lg shadow-black hover:scale-105 hover:duration-300 hover:cursor-default"
               >
                 <FontAwesomeIcon icon={link.icon} className="text-3xl mr-4" />
                 <span>{link.url.replace(/^https?:\/\//, "")}</span>
@@ -90,4 +99,4 @@ const About = () => {
 
 export default About;
 
-// I have a passion for art, I express that passion through web development, music, painting and writing. 
+
