@@ -68,7 +68,7 @@ app.post("/send-email", (req, res) => {
 });
 
 // Serve React Static Files
-app.use(express.static(path.join(__dirname, "dist")));
+app.use('/react_portfolio',express.static(path.join(__dirname, "dist")));
 
 // Catch-All Route for React
 app.get("*", (req, res) => {

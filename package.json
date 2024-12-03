@@ -1,8 +1,8 @@
 {
-  "name": "react-portfolio",
+  "name": "react_portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://mdpfeifer1.github.io/react-portfolio",
+  "homepage": "/react_portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
