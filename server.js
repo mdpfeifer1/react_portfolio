@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 
 dotenv.config();
 
-// Simulating __dirname in ES Modules
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "https://mdpfeifer1.github.io/react_portfolio/", // Update if needed
+    origin: "https://thawing-wave-36881-dc57dbe1b253.herokuapp.com/",
+    // https://mdpfeifer1.github.io/react_portfolio/",
   })
 );
 
@@ -30,7 +31,7 @@ if (
   !process.env.EMAIL_TO
 ) {
   console.error("Missing required environment variables.");
-  process.exit(1); // Stop the server if variables are missing
+  process.exit(1); 
 }
 
 // Nodemailer setup
