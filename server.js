@@ -10,9 +10,9 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors(
+app.use(cors({
   origin: "https://mdpfeifer1.github.io/react_portfolio/"
-));
+}));
 
 const PORT = process.env.PORT || 3001;
 
@@ -20,8 +20,8 @@ const PORT = process.env.PORT || 3001;
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER, // Access email user from .env
-    pass: process.env.EMAIL_PASS, // Access email pass from .env
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS, 
   },
 });
 
