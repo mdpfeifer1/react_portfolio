@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import resumePdfUrl from "../assets/resume.io_app_resumes_47271252_edit (1).png";
+import resumePdfUrl from "../assets/resume.io_app_resumes_47271252_edit (3).png"
 import resumePdfUrl2 from "../assets/resume.io_app_resumes_47271252_edit (2).png";
 
 const Resume = () => {
