@@ -21,7 +21,7 @@ export default function Contact() {
 
     try {
       await axios.post(
-        "https://git.heroku.com/thawing-wave-36881.git/send-email",
+        "https://thawing-wave-36881-dc57dbe1b253.herokuapp.com/send-email",
         formData
       );
       alert("Email sent successfully!");

@@ -21,8 +21,11 @@ app.use(
   cors({
     origin: "https://thawing-wave-36881-dc57dbe1b253.herokuapp.com/",
     // https://mdpfeifer1.github.io/react_portfolio/",
+    methods: ["GET", "POST", "OPTIONS"],
   })
 );
+
+app.options("*", cors()); 
 
 // Environment Variables Check
 if (
