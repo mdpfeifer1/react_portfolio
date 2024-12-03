@@ -21,7 +21,7 @@ export default function Contact() {
 
     try {
       await axios.post(
-        "https://thawing-wave-36881-dc57dbe1b253.herokuapp.com/send-email",
+        "https://mikelpfeiferportfolio-9ef30b755f95.herokuapp.com/send-email",
         formData
       );
       alert("Email sent successfully!");
