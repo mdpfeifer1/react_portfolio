@@ -14,6 +14,8 @@ export default defineConfig({
     ],
   },
 
+  // Plugins for React
+  plugins: [react()],
   // Adjust base for deployment in subdirectories (use your own path)
   base: "/react_portfolio/",
 
@@ -22,9 +24,6 @@ export default defineConfig({
     outDir: "dist", // Ensure output goes to the dist folder
     // We don't need to manually define the entry here, Vite should handle it automatically
   },
-
-  // Plugins for React
-  plugins: [react()],
 
   // Server proxy for development
   server: {
