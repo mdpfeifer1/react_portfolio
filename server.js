@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
-import { fileURLToPath } from "url"; // Necessary for __dirname in ES modules
+import { fileURLToPath } from "url"; 
 
 dotenv.config();
 
@@ -68,11 +68,11 @@ app.post("/send-email", (req, res) => {
 });
 
 // Serve React Static Files
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 // Catch-All Route for React
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 // Server Listening
