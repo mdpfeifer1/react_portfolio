@@ -4,8 +4,13 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from "url"; // Necessary for __dirname in ES modules
 
 dotenv.config();
+
+// Simulating __dirname in ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,7 +19,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "https://mdpfeifer1.github.io/react_portfolio/", // Update as needed
+    origin: "https://mdpfeifer1.github.io/react_portfolio/", // Update if needed
   })
 );
 
@@ -63,7 +68,6 @@ app.post("/send-email", (req, res) => {
 });
 
 // Serve React Static Files
-const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "build")));
 
 // Catch-All Route for React
