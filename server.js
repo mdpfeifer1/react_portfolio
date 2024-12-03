@@ -19,8 +19,8 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "https://mikelpfeiferportfolio-9ef30b755f95.herokuapp.com//",
-    // https://mdpfeifer1.github.io/react_portfolio/",
+    origin: "https://mikelpfeiferportfolio-9ef30b755f95.herokuapp.com/",
+    "https://mdpfeifer1.github.io/react_portfolio/",
     methods: ["GET", "POST", "OPTIONS"],
   })
 );
