@@ -16,24 +16,24 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-2 bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center  bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700 text-white">
       {/* Resumes Display */}
-      <div className="flex justify-evenly gap-4 w-full">
+      <div className="flex flex-wrap justify-center items-center gap-8 w-full max-w-[1100px]">
         {/* Resume 1 */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full sm:w-[45%]">
           <iframe
             src={resumePdfUrl}
             title="Resume 1"
-            className="w-[500px] h-[700px] rounded-lg shadow-lg"
+            className="w-full h-[80vh] rounded-lg"
           ></iframe>
         </div>
 
         {/* Resume 2 */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full sm:w-[45%]">
           <iframe
             src={resumePdfUrl2}
             title="Resume 2"
-            className="w-[500px] h-[700px] rounded-lg shadow-lg"
+            className="w-full h-[80vh] rounded-lg"
           ></iframe>
         </div>
       </div>
