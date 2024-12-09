@@ -62,7 +62,7 @@ const SkillsSection = () => {
   const bottomRowDoubled = [...bottomRowSkills, ...bottomRowSkills];
 
   return (
-    <div className="skills-container overflow-hidden relative h-52 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-md shadow-xl shadow-black">
+    <div className="skills-container overflow-hidden relative h-52 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-xl shadow-black">
       <div className="skills-wrapper relative">
         {/* Top Row */}
         <div className="skills-row flex w-max animate-scroll">

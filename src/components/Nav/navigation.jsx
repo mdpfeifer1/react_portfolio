@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+// import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "./navigation.css";
 
 function NavTabs() {
-  const currentPage = useLocation().pathname;
+  const currentPage = window.location.pathname + window.location.hash;
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/Resume", label: "Resume" },
-    { path: "/Work", label: "Projects" },
+    { path: "/#Work", label: "Projects" },
     { path: "/Contact", label: "Contact" },
-    { path: "/Education", label: "Education" },
+    { path: "/#Education", label: "Education" },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -53,7 +54,8 @@ function NavTabs() {
         <ul className="flex flex-col lg:flex-row items-center lg:justify-center py-2">
           {navLinks.map(({ path, label }) => (
             <li key={path} className="nav-item my-2 lg:my-0">
-              <Link
+              <HashLink
+                smooth
                 to={path}
                 className={`block text-yellow-300 font-bold text-lg hover:text-white hover:rounded-xl hover:scale-105 ${
                   currentPage === path ? "font-bold text-white text-xl" : ""
@@ -61,7 +63,7 @@ function NavTabs() {
                 onClick={() => setIsOpen(false)}
               >
                 {label}
-              </Link>
+              </HashLink>
             </li>
           ))}
         </ul>

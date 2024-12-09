@@ -9,7 +9,7 @@
 
 
 .animate-auto-scroll {
-  animation: auto-scroll 40s linear infinite;
+  animation: auto-scroll 5s linear infinite;
 }
 
 /* Hides scroll bar */

@@ -22,6 +22,7 @@ const router = createHashRouter([
       {
         path: "/Work",
         element: <Work />,
+        action: { section: "Work" },
       },
       {
         path: "/Contact",
@@ -34,6 +35,7 @@ const router = createHashRouter([
       {
         path: "/Education",
         element: <Education />,
+        action: { section: "Education" },
       },
     ],
   },
