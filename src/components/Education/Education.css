@@ -1,0 +1,57 @@
+/* Make sure the default state is hidden and off-screen for smooth animation */
+.education-container ul li {
+  opacity: 0
+  ;
+  transform: translateY(30px); /* Start slightly off-screen */
+  transition: opacity 1.7s ease-out, transform 1.7s ease-out; /* Smooth fade-in and slide-in effect */
+}
+
+/* Define the fade-in animation when an element comes into view */
+.education-container .fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+
+}
+
+/* Define the blinking animation for the circle */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.education-container .animate-blink {
+  animation: blink 1.5s infinite;
+}
+
+/* .education-container .fade-item .flex {
+  align-items: center;
+}
+
+
+.education-container .fade-item .flex  .fa-circle {
+  width: 8px;
+  height: 8px;
+} */
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(30px); /* Initial position */
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out; /* Smooth animation */
+}
+
+.fade-item.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Reset to visible position */
+}
+
+.fade-item:hover {
+  transform: scale(1.05); /* Scale slightly on hover */
+  transition: transform 0.3s ease-in-out; /* Smooth scale animation */
+}

@@ -1,7 +1,9 @@
 // Bringing in the required import from 'react-router-dom'
 // import Header from './components/header'
 import { Outlet } from 'react-router-dom';
-import Nav from './components/navigation';
+// import Header from './components/header';
+import Nav from './components/Nav/navigation';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

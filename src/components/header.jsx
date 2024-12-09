@@ -1,20 +1,16 @@
-// // Header.js
-// import React from 'react';
+import React from "react";
 
-// const Header = ({ title, imageUrl }) => {
-//   return (
-//     <div
-//       className=" flex items-center justify-center"
-//       style={{
-//         background: `url(${imageUrl}) center/cover no-repeat`,
-//         height: '100vh', // Set the height to 100% of viewport height
-//       }}
-//     >
-//       <div className="text-white text-center">
-//         <h1 className="text-4xl font-bold mb-4">{title}</h1>
-//       </div>
-//     </div>
-//   );
-// };
+function Header() {
+  return (
+    <header className="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 shadow-lg shadow-black">
+      <div className="container mx-auto py-4 flex justify-center">
+        <h1 className="text-2xl font-bold text-yellow-300">
+          Mikel Pfeifer{" "}
+          <span className="text-violet-600">| Full Stack Developer</span>
+        </h1>
+      </div>
+    </header>
+  );
+}
 
-// export default Header;
+export default Header;

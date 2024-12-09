@@ -4,9 +4,10 @@ import App from "./App.jsx";
 import "./index.css";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import Contact from "./pages/Contact.jsx";
-import About from "./pages/About.jsx";
+import Home from "./pages/About.jsx";
 import Work from "./pages/Work.jsx";
 import Resume from "./pages/Resume.jsx";
+import Education from "./components/Education/Education.jsx";
 
 
 const router = createHashRouter([
@@ -16,7 +17,7 @@ const router = createHashRouter([
     children: [
       {
         index: true,
-        element: <About />,
+        element: <Home />,
       },
       {
         path: "/Work",
@@ -30,9 +31,15 @@ const router = createHashRouter([
         path: "/Resume",
         element: <Resume />,
       },
+      {
+        path: "/Education",
+        element: <Education />,
+      },
     ],
   },
 ]);
+
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />

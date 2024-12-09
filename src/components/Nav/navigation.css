@@ -1,0 +1,13 @@
+/* Reset styles for <li> in the navigation component */
+nav ul li {
+  all: unset; /* Reset all inherited styles */
+}
+
+/* Restore the desired styles for the navigation links */
+nav ul li {
+  list-style: none; /* Removes bullet points */
+  opacity: 1;       /* Ensures visibility */
+  margin: 0;
+  padding: 0;
+  display: inline-block; /* For horizontal alignment */
+}
