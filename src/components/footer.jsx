@@ -17,7 +17,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 shadow-xl shadow-black py-2 ">
+    <footer className="bg-gradient-to-r from-black via-gray-900 to-black shadow-xl shadow-black py-2 ">
       <div className="flex justify-center space-x-6">
         {socialLinks.map((link, index) => (
           <a

@@ -10,9 +10,9 @@ function NavTabs() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/Resume", label: "Resume" },
-    { path: "/#Work", label: "Projects" },
+    { path: "#work", label: "Projects" },
     { path: "/Contact", label: "Contact" },
-    { path: "/#Education", label: "Education" },
+    { path: "#education", label: "Education" },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);

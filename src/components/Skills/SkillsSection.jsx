@@ -62,14 +62,14 @@ const SkillsSection = () => {
   const bottomRowDoubled = [...bottomRowSkills, ...bottomRowSkills];
 
   return (
-    <div className="skills-container overflow-hidden relative h-52 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-xl shadow-black">
+    <div className="skills-container overflow-hidden relative h-52 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-xl shadow-black">
       <div className="skills-wrapper relative">
         {/* Top Row */}
         <div className="skills-row flex w-max animate-scroll">
           {topRowDoubled.map((skill, index) => (
             <div
               key={`top-${index}`}
-              className="skill-card bg-gradient-to-r from-gray-700 via-gray-600 to-gray-800 hover:scale-105 duration-300 flex flex-col items-center justify-center m-2 p-2 rounded-lg shadow-lg shadow-black min-w-[150px]"
+              className="skill-card bg-gradient-to-r from-gray-700 via-gray-600 to-gray-800 hover:scale-110 duration-300 flex flex-col items-center justify-center m-2 p-2 rounded-2xl shadow-lg shadow-black min-w-[150px]"
             >
               <div className="text-4xl mb-2" style={{ color: skill.color }}>
                 {skill.icon}

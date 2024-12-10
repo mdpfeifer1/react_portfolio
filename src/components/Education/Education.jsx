@@ -52,16 +52,18 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="education-container bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-8 shadow-xl shadow-black rounded-xl">
-      <div className="container mx-auto">
-        {/* <h1 className="text-4xl font-bold text-center text-green-500 shadow-xl shadow-black mb-4 p-2">
+    <div className="education-container bg-gradient-to-r from-black via-gray-900 to-gray-800 py-8 shadow-xl shadow-black rounded-2xl mb-12">
+      <div className="mb-6 ml-6">
+        <h2 className="text-3xl font-bold text-violet-400 hover:underline">
           Education
-        </h1> */}
+        </h2>
+      </div>
+      <div className="container mx-auto">
         <div className="flex flex-wrap gap-8 justify-center lg:justify-between">
           {educationData.map((school) => (
             <div
               key={school.school}
-              className={`w-full lg:w-[45%] h-auto mx-6 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 shadow-xl shadow-black rounded-xl p-4 text-yellow-300 ${
+              className={`w-full lg:w-[45%] h-auto mx-6 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 shadow-xl shadow-black rounded-2xl p-4 text-yellow-300 ${
                 school.school === "SMU"
                   ? "lg:order-1"
                   : school.school === "Richland"
@@ -80,7 +82,7 @@ const Education = () => {
                 {school.description.map((desc, idx) => (
                   <div
                     key={idx}
-                    className="fade-item p-4 bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 rounded-xl shadow-lg shadow-black transform opacity-0 translate-y-4 transition-all duration-700 ease-in-out hover:scale-105"
+                    className="fade-item p-4 bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 rounded-2xl shadow-lg shadow-black transform opacity-0 translate-y-4 transition-all duration-700 ease-in-out hover:scale-105"
                   >
                     <div className="flex items-center mb-2">
                       <FaCircle

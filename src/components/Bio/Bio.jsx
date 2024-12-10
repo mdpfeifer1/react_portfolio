@@ -27,9 +27,9 @@ const Bio = () => {
     "Pronounced Michael Fi Fur, for now I’m a freelance Web Developer, Software Engineer and UI/UX Designer pursuing an opportunity to shine, grow and challenge myself within a company. I'm an artist at heart whether the medium be writing, music, painting, drawing or here with developing applications I bring forth passion in it all.";
 
   return (
-    <div className="bio-card bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 rounded-xl shadow-xl shadow-black h-64 w-96 p-4 flex flex-col justify-center items-center overflow-hidden hover:scale-105 duration-300">
-      <h2 className="text-lg font-bold text-yellow-300 mb-2">About Me</h2>
-      <div className="text-violet-400 text-center font-bold overflow-hidden h-full">
+    <div className="bio-card bg-gradient-to-r from-black via-gray-900 to-gray-800 rounded-2xl shadow-xl shadow-black h-64 w-96 p-4 flex flex-col justify-center items-center overflow-hidden hover:scale-105 duration-300">
+      <h2 className="text-lg font-bold text-violet-400 mb-2">About Me</h2>
+      <div className="text-green-400 text-center font-bold overflow-hidden h-full">
         <Typewriter text={bioText} />
       </div>
     </div>

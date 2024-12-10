@@ -121,7 +121,7 @@ const CardList = () => {
 
   return (
     <div
-      className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-4 overflow-hidden rounded-xl shadow-xl shadow-black"
+      className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-4 overflow-hidden rounded-2xl shadow-2xl shadow-black"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -133,19 +133,19 @@ const CardList = () => {
         {repeatedCards.map((card, index) => (
           <div
             key={index}
-            className="w-96 h-96 bg-white shadow-xl hover:scale-105 transition-transform duration-200 shadow-black rounded-xl overflow-hidden flex-shrink-0 relative"
+            className="w-96 h-96 shadow-xl hover:scale-105 transition-transform duration-200 shadow-black rounded-2xl overflow-hidden flex-shrink-0 relative"
           >
             <a href={card.link} target="_blank" rel="noopener noreferrer">
               <img
                 src={card.imgSrc}
                 alt={card.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-opacity-80 opacity-0 shadow-xl shadow-black hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
-                <h2 className="text-xl font-semibold text-white mb-2">
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 bg-opacity-80 opacity-0 shadow-xl shadow-black hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
+                <h2 className="text-xl font-bold text-violet-400 mb-2">
                   {card.title}
                 </h2>
-                <p className="text-gray-100 font-bold">{card.description}</p>
+                <p className="text-green-400 font-bold">{card.description}</p>
               </div>
             </a>
           </div>
