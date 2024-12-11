@@ -16,7 +16,7 @@ const Resume = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white mt-24">
       {/* Resumes Display */}
       <div className="flex flex-wrap justify-center items-center gap-8 w-full max-w-[1100px]">
         {/* Resume 1 */}

@@ -9,19 +9,36 @@ import Education from "../components/Education/Education";
 const Home = () => {
   const workRef = useRef(null);
   const educationRef = useRef(null);
-  const { hash } = useLocation(); // Grab the hash from the URL
+  const location = useLocation(); // Grab the hash from the URL
+
 
   useEffect(() => {
-    // Scroll to the appropriate section when the hash changes
-    if (hash === "#work") {
-      workRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (hash === "#education") {
-      educationRef.current?.scrollIntoView({ behavior: "smooth" });
+    const { state } = location;
+    if (state?.scrollTo) {
+      const targetElement =
+        state.scrollTo === "work"
+          ? workRef.current
+          : state.scrollTo === "education"
+            ? educationRef.current
+            : null;
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  }, [hash]); // Re-run this effect whenever the hash changes
+  }, [location]);
+
+      // useEffect(() => {
+  //   // Scroll to the appropriate section when the hash changes
+  //   if (hash === "#work") {
+  //     workRef.current?.scrollIntoView({ behavior: "smooth" });
+  //   } else if (hash === "#education") {
+  //     educationRef.current?.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [hash]); // Re-run this effect whenever the hash changes
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 min-h-screen">
+    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 min-h-screen mt-24">
       <div className="container mx-auto">
         {/* Centered Image and Bio Section */}
         <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-8 text-center lg:text-left py-12">

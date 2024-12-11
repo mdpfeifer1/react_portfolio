@@ -36,7 +36,7 @@ export default function Contact() {
     "block w-full rounded-lg border-gray-500 py-2 px-3 text-gray-900 shadow-xl shadow-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-500 sm:text-sm";
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 mt-24">
       <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 p-8 rounded-xl shadow-xl shadow-black w-full max-w-md mb-64">
         <h2 className="text-2xl font-bold mb-6 text-green-400 text-center">
           Contact Me

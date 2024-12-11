@@ -1,24 +1,40 @@
 import React, { useState } from "react";
-// import { Link, useLocation } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { useNavigate } from "react-router-dom";
 import "./navigation.css";
 
 function NavTabs() {
-  const currentPage = window.location.pathname + window.location.hash;
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/Resume", label: "Resume" },
-    { path: "#work", label: "Projects" },
+    { path: "/#work", label: "Projects" },
     { path: "/Contact", label: "Contact" },
-    { path: "#education", label: "Education" },
+    { path: "/#education", label: "Education" },
   ];
+
+  const handleNavClick = (path) => {
+    if (path.startsWith("/#")) {
+      const sectionId = path.split("#")[1];
+      if (window.location.pathname !== "/") {
+        navigate("/", { state: { scrollTo: sectionId } });
+      } else {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else {
+      navigate(path);
+    }
+    setIsOpen(false); // Close the menu after clicking
+  };
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="relative bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 shadow-lg shadow-black">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 shadow-lg shadow-black">
       {/* Mobile Header */}
       <div className="lg:hidden flex items-center justify-between px-4 py-2">
         {/* Hamburger Menu */}
@@ -54,16 +70,12 @@ function NavTabs() {
         <ul className="flex flex-col lg:flex-row items-center lg:justify-center py-2">
           {navLinks.map(({ path, label }) => (
             <li key={path} className="nav-item my-2 lg:my-0">
-              <HashLink
-                smooth
-                to={path}
-                className={`block text-yellow-300 font-bold text-lg hover:text-white hover:rounded-xl hover:scale-105 ${
-                  currentPage === path ? "font-bold text-white text-xl" : ""
-                } px-4`}
-                onClick={() => setIsOpen(false)}
+              <button
+                onClick={() => handleNavClick(path)}
+                className="block text-yellow-300 font-bold text-lg hover:text-white hover:rounded-xl hover:scale-105 hover:shadow-lg hover:shadow-yellow-300 transition-transform duration-300 px-4"
               >
                 {label}
-              </HashLink>
+              </button>
             </li>
           ))}
         </ul>
