@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./navigation.css";
 
 function NavTabs() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -14,27 +15,46 @@ function NavTabs() {
     { path: "/#education", label: "Education" },
   ];
 
-const handleNavClick = (path) => {
-  if (path === "/") {
-    // Scroll to the top of the page when Home is selected
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate("/");
-  } else if (path.startsWith("/#")) {
-    const sectionId = path.split("#")[1];
-    if (window.location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: sectionId } });
+  // Handle navigation and scrolling
+  const handleNavClick = (path) => {
+    if (path === "/") {
+      // Scroll to the top of the page when Home is selected
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      navigate("/");
+    } else if (path.startsWith("/#")) {
+      const sectionId = path.split("#")[1];
+      if (location.pathname !== "/") {
+        // Navigate to the homepage first, then scroll to the section
+        navigate("/", { state: { scrollTo: sectionId } });
+      } else {
+        // Scroll to the section directly
+        scrollToSection(sectionId);
+      }
     } else {
+      // Navigate to other pages
+      navigate(path);
+    }
+    setIsOpen(false); // Close the mobile menu after clicking
+  };
+
+  // Scroll to a section with a delay
+  const scrollToSection = (sectionId) => {
+    setTimeout(() => {
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
-    }
-  } else {
-    navigate(path);
-  }
-  setIsOpen(false); // Close the menu after clicking
-};
+    }, 100); // Small delay to allow the DOM to update
+  };
 
+  // Handle scrolling after navigation to the homepage
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      scrollToSection(location.state.scrollTo);
+    }
+  }, [location]);
+
+  // Toggle mobile menu
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
@@ -45,6 +65,7 @@ const handleNavClick = (path) => {
         <button
           className="text-yellow-300 font-bold text-2xl"
           onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
           ☰
         </button>
