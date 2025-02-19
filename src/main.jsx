@@ -8,6 +8,7 @@ import Home from "./pages/About.jsx";
 import Work from "./pages/Work.jsx";
 import Resume from "./pages/Resume.jsx";
 import Education from "./components/Education/Education.jsx";
+import SuccessPage from "./pages/SuccessPage/SuccessPage.jsx";
 
 
 const router = createHashRouter([
@@ -27,6 +28,7 @@ const router = createHashRouter([
       {
         path: "/Contact",
         element: <Contact />,
+        action: { section: "Contact" },
       },
       {
         path: "/Resume",
@@ -37,6 +39,10 @@ const router = createHashRouter([
         element: <Education />,
         action: { section: "Education" },
       },
+      {
+        path: "success",
+        element: <SuccessPage />,
+      }
     ],
   },
 ]);

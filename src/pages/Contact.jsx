@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ export default function Contact() {
     phone: "",
     about: "",
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     setFormData({
@@ -20,12 +23,17 @@ export default function Contact() {
     e.preventDefault();
 
     try {
+      // Send the email
       await axios.post(
         "https://mikelpfeiferportfolio-9ef30b755f95.herokuapp.com/send-email",
         formData
       );
-      alert("Email sent successfully!");
+
+      // Clear the form
       setFormData({ name: "", email: "", phone: "", about: "" });
+
+      // Redirect to the success page
+      navigate("/success");
     } catch (error) {
       console.error("Error sending email:", error);
       alert("Failed to send email.");
@@ -36,8 +44,8 @@ export default function Contact() {
     "block w-full rounded-lg border-gray-500 py-2 px-3 text-gray-900 shadow-xl shadow-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-500 sm:text-sm";
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 mt-24">
-      <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 p-8 rounded-xl shadow-xl shadow-black w-full max-w-md mb-64">
+    <div className="flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 mx-auto lg:pt-26 rounded-2xl shadow-black shadow-xl">
+      <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 p-8 rounded-xl shadow-xl shadow-black w-full max-w-md mb-12 mt-12">
         <h2 className="text-2xl font-bold mb-6 text-green-400 text-center">
           Contact Me
         </h2>
@@ -47,7 +55,7 @@ export default function Contact() {
             <div key={field}>
               <label
                 htmlFor={field}
-                className="block text-sm font-bold text-yellow-300 shadow-xl shadow-black capitalize mb-2"
+                className="block text-sm font-bold text-yellow-300 capitalize mb-2"
               >
                 {field === "phone"
                   ? "Phone Number"
@@ -69,7 +77,7 @@ export default function Contact() {
           <div>
             <label
               htmlFor="about"
-              className="block text-sm font-bold text-yellow-300 shadow-xl shadow-black mb-2"
+              className="block text-sm font-bold text-yellow-300  mb-2"
             >
               Please leave a detailed message of inquiry
             </label>

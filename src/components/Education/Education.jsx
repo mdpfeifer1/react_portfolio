@@ -52,24 +52,18 @@ const Education = () => {
   }, []);
 
   return (
-    <div className="education-container bg-gradient-to-r from-black via-gray-900 to-gray-800 py-8 shadow-xl shadow-black rounded-2xl mb-12">
+    <div className="education-container bg-gradient-to-r from-black via-gray-900 to-gray-800 py-8 shadow-xl shadow-black rounded-2xl mb-2">
       <div className="mb-6 ml-6">
-        <h2 className="text-3xl font-bold text-violet-400 hover:underline">
+        <h2 className="text-3xl font-bold text-violet-400 hover:underline hover:cursor-progress">
           Education
         </h2>
       </div>
       <div className="container mx-auto">
-        <div className="flex flex-wrap gap-8 justify-center lg:justify-between">
+        <div className="flex flex-wrap justify-center gap-8">
           {educationData.map((school) => (
             <div
               key={school.school}
-              className={`w-full lg:w-[45%] h-auto mx-6 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 shadow-xl shadow-black rounded-2xl p-4 text-yellow-300 ${
-                school.school === "SMU"
-                  ? "lg:order-1"
-                  : school.school === "Richland"
-                    ? "lg:order-3"
-                    : "lg:order-2"
-              }`}
+              className={`w-full lg:w-[45%] h-auto bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 shadow-xl shadow-black rounded-2xl p-4 text-yellow-300`}
             >
               <h2 className="text-2xl font-bold mb-2">{school.school}</h2>
               <h3 className="text-xl text-violet-400 mb-2 font-bold">

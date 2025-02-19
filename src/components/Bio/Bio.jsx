@@ -24,7 +24,7 @@ const Typewriter = ({ text }) => {
 
 const Bio = () => {
   const bioText =
-    "I am currently a freelance Web Developer, Software Engineer, and UI/UX Designer actively seeking an opportunity to contribute, grow, and challenge myself within a dynamic company. With a strong foundation in both technical and creative disciplines, I bring a unique blend of artistry and precision to every project. Whether through writing, music, painting, drawing, or developing applications, I infuse passion and creativity into everything I do, striving to deliver innovative and user-centric solutions.";
+    "I am currently a freelance Web Developer actively seeking an opportunity to contribute, grow, and challenge myself within a dynamic company. With a strong foundation in both technical and creative disciplines, I bring a unique blend of artistry and precision to every project. Whether through writing, music, painting, drawing, or developing applications, I infuse passion and creativity into everything I do, striving to deliver innovative and user-centric solutions.";
 
   return (
     <div className="bio-card bg-gradient-to-r from-black via-gray-900 to-gray-800 rounded-2xl shadow-xl shadow-black h-64 w-96 p-4 flex flex-col justify-center items-center overflow-hidden hover:scale-105 duration-300">

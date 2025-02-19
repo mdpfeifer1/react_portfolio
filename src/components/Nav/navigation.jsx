@@ -10,26 +10,30 @@ function NavTabs() {
     { path: "/", label: "Home" },
     { path: "/Resume", label: "Resume" },
     { path: "/#work", label: "Projects" },
-    { path: "/Contact", label: "Contact" },
+    { path: "/#Contact", label: "Contact" },
     { path: "/#education", label: "Education" },
   ];
 
-  const handleNavClick = (path) => {
-    if (path.startsWith("/#")) {
-      const sectionId = path.split("#")[1];
-      if (window.location.pathname !== "/") {
-        navigate("/", { state: { scrollTo: sectionId } });
-      } else {
-        const targetElement = document.getElementById(sectionId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth" });
-        }
-      }
+const handleNavClick = (path) => {
+  if (path === "/") {
+    // Scroll to the top of the page when Home is selected
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/");
+  } else if (path.startsWith("/#")) {
+    const sectionId = path.split("#")[1];
+    if (window.location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: sectionId } });
     } else {
-      navigate(path);
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     }
-    setIsOpen(false); // Close the menu after clicking
-  };
+  } else {
+    navigate(path);
+  }
+  setIsOpen(false); // Close the menu after clicking
+};
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -72,7 +76,7 @@ function NavTabs() {
             <li key={path} className="nav-item my-2 lg:my-0">
               <button
                 onClick={() => handleNavClick(path)}
-                className="block text-yellow-300 font-bold text-lg hover:text-white hover:rounded-xl hover:scale-105 hover:shadow-lg hover:shadow-yellow-300 transition-transform duration-300 px-4"
+                className="block text-yellow-300 font-bold text-lg hover:text-white hover:rounded-2xl hover:scale-105 hover:shadow-lg hover:shadow-yellow-300 transition-transform duration-300 px-4"
               >
                 {label}
               </button>
