@@ -11,8 +11,8 @@ function NavTabs() {
     { path: "/", label: "Home" },
     { path: "/Resume", label: "Resume" },
     { path: "/#work", label: "Projects" },
-    { path: "/#Contact", label: "Contact" },
     { path: "/#education", label: "Education" },
+    { path: "/#Contact", label: "Contact" },
   ];
 
   // Handle navigation and scrolling
