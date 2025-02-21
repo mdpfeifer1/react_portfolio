@@ -16,3 +16,7 @@
     /* Start invisible */
     animation: fadeIn 2s ease-out forwards;
 }
+
+.fade-in.visible {
+    opacity: 1;
+}

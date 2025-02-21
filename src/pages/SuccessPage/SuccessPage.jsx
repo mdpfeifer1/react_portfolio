@@ -6,7 +6,7 @@ const SuccessPage = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleBackToHome = () => {
-    navigate("/about"); // Redirect to the About page
+    navigate("/Home"); // Redirect to the About page
   };
 
   return (

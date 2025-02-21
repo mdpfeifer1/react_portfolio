@@ -9,10 +9,10 @@ function NavTabs() {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/Resume", label: "Resume" },
     { path: "/#work", label: "Projects" },
     { path: "/#education", label: "Education" },
     { path: "/#Contact", label: "Contact" },
+    { path: "/Resume", label: "Resume" },
   ];
 
   // Handle navigation and scrolling
